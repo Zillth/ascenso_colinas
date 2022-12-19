@@ -1,0 +1,13 @@
+.input-group {
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.input__container {
+    text-align: center;
+}
+
+table {
+    max-width: 600px;
+    margin: 15px auto;
+}

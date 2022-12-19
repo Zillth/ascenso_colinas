@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="cell" *ngFor="let m of matrix; let y = index">
+    <div class="cell" *ngFor="let n of m; let x = index">
+      <app-cell
+        [coordenates]="[x, y]"
+        [goalState]="goalState"
+        [initState]="initState"
+        [obstacles]="obstacles"
+        (setPurpose)="setState($event)"
+        [value]="heuristicMatrix[x][y]"
+        [isPath]="isPath(x,y)"
+      ></app-cell>
+    </div>
+  </div>
+  <div class="btn__container">
+    <div [ngClass]="getClass(1)" (click)="changeSelected(1)">
+      Estado inicial
+    </div>
+    <div [ngClass]="getClass(2)" (click)="changeSelected(2)">
+      Estado objetivo
+    </div>
+    <div [ngClass]="getClass(3)" (click)="changeSelected(3)">Obstaculo</div>
+    <div class="btn" (click)="hillClimber()">Calcular</div>
+    <div class="btn" (click)="reset()">Reset</div>
+  </div>
+</div>

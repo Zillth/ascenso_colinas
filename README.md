@@ -1,27 +1,25 @@
-# AscensoColinas
+## Algoritmo de Ascenso de Colina
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+Este programa esta hecho en angular y representa un algoritmo de eficiencia llamado ascenso de colina,
+este algoritmo tiene como proposito tomar valores mas altos hasta llegar a un máximo local o global.
 
-## Development server
+## Ejecución
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Hacer un git clone del directorio o en su defecto descargar el archivo comprimido, ir a una terminal y en la
+misma ruta del directorio ejecutar los comandos 'npm i' para instalar los node_modules correspondientes, y
+'npm start' para ejecutar angular.
 
-## Code scaffolding
+El puerto es el predeterminado para angular '4200'.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Manual de usuario
 
-## Build
+La ventana principal es un mapa con celdas donde puedes colocar punto inicial, punto objetivo y obstaculos, en esta
+ventana deberás colocar cada punto haciendo click primero en la opción que deseas colocar y después en la cuadricula,
+cuando le des a calcular, calculará la heuristica de cada celda y eligira el camino basandose en el valor máximo.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+La segunda ventana de función tendras 3 inputs, punto inicial, a y b; el punto inicial es el valor con el que va a partir
+la evaluación de la función, deberás de llenar este input con el punto inicial en x, seguido por una coma para posterior seguir
+con el valor de y, ej: '-1,2', evitar espacios. Los demás puntos, a y b solo funcionan para la función de Rosenbrock.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Cabe aclarar que este programa utiliza el algoritmo básico de ascenso de colinas, por lo que los valores obtenidos pueden no 
+necesariamente ser los máximos globales, en su defecto podrian ser máximos locales.

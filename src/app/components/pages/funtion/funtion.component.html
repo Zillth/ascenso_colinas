@@ -1,0 +1,78 @@
+<div class="input__container">
+  <div class="input-group input-group-lg">
+    <span class="input-group-text" id="inputGroup-sizing-lg"
+      >Punto Inicial:</span
+    >
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-lg"
+      [(ngModel)]="formInput"
+    />
+  </div>
+  <div class="input-group">
+    <span class="input-group-text" id="inputGroup-sizing-lg">a:</span>
+    <input
+      type="number"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-lg"
+      [(ngModel)]="inputa"
+    />
+  </div>
+  <div class="input-group">
+    <span class="input-group-text" id="inputGroup-sizing-lg">b:</span>
+    <input
+      type="number"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-lg"
+      [(ngModel)]="inputb"
+    />
+  </div>
+  <div class="flex">
+    <div class="btn btn-outline-secondary" (click)="hillClimber(1)">
+      <i>
+        f(x,y) = -((a - x) <sup>2</sup> - b * (y - x <sup>2</sup>))
+        <sup>2</sup>
+      </i>
+    </div>
+    <div class="btn btn-outline-secondary" (click)="hillClimber(2)">
+      <i>
+        f(x,y) = -((x<sup>2</sup> + y - 11)<sup>2</sup> + (x + y<sup>2</sup> -
+        7)<sup>2</sup>)</i
+      >
+    </div>
+    <div class="btn btn-outline-secondary" (click)="hillClimber(3)">
+      <i> f(x,y) = -(x<sup>2</sup> - 24x + y<sup>2</sup> - 10y) </i>
+    </div>
+  </div>
+  <table class="table table-striped table-hover" *ngIf="currentFunction">
+    <thead>
+      <tr>
+        <th scope="col">Cordenada</th>
+        <th scope="col">Valor de función</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of path">
+        <th scope="row">{{ p }}</th>
+        <td>
+          {{
+            currentFunction == 1
+              ? rosenbrock(p[0], p[1], 1, 100)
+              : currentFunction == 2
+              ? ex2(p[0], p[1])
+              : ex4(p[0], p[1])
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h5 *ngIf="currentFunction">
+    Posición de valor máximo encontrado (local o global):
+    {{ path[path.length - 1] }}
+  </h5>
+</div>
