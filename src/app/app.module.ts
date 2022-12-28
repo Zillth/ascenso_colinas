@@ -9,6 +9,7 @@ import { MapComponent } from './components/pages/map/map.component';
 import { FuntionComponent } from './components/pages/funtion/funtion.component';
 import { CellComponent } from './components/cell/cell.component';
 import { FormsModule } from '@angular/forms';
+import { Function3vComponent } from './components/pages/function3v/function3v.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MapComponent,
     FuntionComponent,
-    CellComponent
+    CellComponent,
+    Function3vComponent
   ],
   imports: [
     BrowserModule,

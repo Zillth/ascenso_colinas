@@ -1,0 +1,51 @@
+<div class="input__container">
+  <div class="input-group input-group-lg">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Función:</span>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-lg"
+      [(ngModel)]="formula"
+    />
+  </div>
+  <div class="input-group input-group-lg">
+    <span class="input-group-text" id="inputGroup-sizing-lg"
+      >Punto Inicial:</span
+    >
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-lg"
+      [(ngModel)]="initialState"
+    />
+  </div>
+  
+  <div class="flex">
+    <div class="btn btn-outline-secondary" (click)="hillClimber()">
+      Calcular
+    </div>
+  </div>
+  <table class="table table-striped table-hover" *ngIf="currentFunction">
+    <thead>
+      <tr>
+        <th scope="col">Cordenada</th>
+        <th scope="col">Valor de función</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of path">
+        <th scope="row">{{ p }}</th>
+        <td>
+          {{ evaluate(p[0], p[1], p[2], formulaFixed) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h5 *ngIf="currentFunction">
+    Posición de valor máximo encontrado (local o global):
+    {{ path[path.length - 1] }}
+  </h5>
+</div>
